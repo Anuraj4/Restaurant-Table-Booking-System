@@ -44,12 +44,12 @@ const BookingForm = () => {
       console.error(err);
       // Show error toast notification
       toast.error('Error creating booking. Please try again.', {
-        position: 'top-right',
+        position: 'top-center',
         autoClose: 3000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
-        draggable: true
+        draggable: false
       });
     }
   };
