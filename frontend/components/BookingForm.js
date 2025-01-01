@@ -23,7 +23,7 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/bookings/create', formData);
+      await axios.post('https://restaurant-table-booking-system-backend.onrender.com', formData);
 
       // Show success toast notification
       toast.success('Table booked successfully!', {
