@@ -100,6 +100,7 @@ button {
     background: #dc3545;
     color: white;
 }
+
 /* For Small Tablets and Large Phones (Portrait) */
 @media (max-width: 768px) {
     body {
@@ -112,7 +113,8 @@ button {
         max-width: 90%;
     }
 
-    input, button {
+    input,
+    button {
         font-size: 0.9rem;
         padding: 0.7rem;
     }
@@ -125,7 +127,8 @@ button {
         border-radius: 10px;
     }
 
-    input, button {
+    input,
+    button {
         font-size: 0.8rem;
         padding: 0.6rem;
     }
@@ -141,12 +144,92 @@ button {
         padding: 0.8rem;
     }
 
-    input, button {
+    input,
+    button {
         font-size: 0.75rem;
         padding: 0.5rem;
     }
 
     button {
         margin-top: 0.6rem;
+    }
+}
+
+/* Default styles */
+.container {
+    background-color: transparent;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    text-align: left;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 400px;
+    width: 90%;
+}
+
+.toastHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    .container {
+        max-width: 350px;
+        width: 80%;
+        padding: 1rem;
+        background-color: white;
+    }
+    p{
+        color: black;
+    }
+
+    .title {
+        font-size: 1rem;
+    }
+
+    .closeButton {
+        font-size: 1.3rem;
+        color: black;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        max-width: 300px;
+        width: 85%;
+        padding: 0.8rem;
+        background-color: white;
+        top: 20%;
+    }
+
+    .title {
+        font-size: 0.9rem;
+    }
+
+    .closeButton {
+        font-size: 1.2rem;
     }
 }

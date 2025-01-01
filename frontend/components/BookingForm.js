@@ -3,6 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css';
+import BookingSummary from './BookingSummary';
 
 const BookingForm = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const BookingForm = () => {
     time: '',
     guests: ''
   });
+
+  const [bookingDetails, setBookingDetails] = useState(null); // State for storing successful booking details
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,6 +34,9 @@ const BookingForm = () => {
         pauseOnHover: true,
         draggable: false
       });
+
+      // Set booking details for summary
+      setBookingDetails(formData);
 
       // Clear the form fields
       setFormData({
@@ -98,6 +104,9 @@ const BookingForm = () => {
 
       {/* Toast Container */}
       <ToastContainer />
+
+      {/* Show Booking Summary Only After Successful Booking */}
+      {bookingDetails && <BookingSummary booking={bookingDetails} />}
     </div>
   );
 };
